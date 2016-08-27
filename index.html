@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script src="js/Shared/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="header">
+      <div class="container">
+          <div class="col-md-6"> <h1>Home Electronics</h1></div>
+            <div class="col-md-3"> 
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search for...">
+                </div>
+            </div>
+            <div class="col-md-3"> 
+                  <ul>
+                        <a href="#/about" id="aboutme"><li class="sign-in">Sign in</li></a>
+                        <a href="#/projects" id="project"><li class="sign-up">Sing Up</li></a>
+          
+                    </ul>
+            </div>
+      </div>
+    </div>
+       <div class="aboutme">
+        <div class="container">
+          <div class="row">
+              <div class="slide active-slide">
+                <div class="col-xs-12">
+                 
+                </div>
+                <div class="slide-img col-xs-6">
+                    
+                </div>
+              </div>
+        <div class="slide">
+          <div class="row">
+            
+            
+        </div> 
+        <div class="slide">
+          <div class="row">
+            
+          </div>
+        </div> 
+              
+    <div class="slide">
+      <div class="row">
+        <div class="slide-img col-md-6">
+            <img src="./img/aboutme3.jpg" width="540px">
+        </div>
+        <div class="col-md-5">
+  
+        
+        </div>
+     </div>
+  </div>
+   
+       </div>
+       </div>
+      </div>
+    <div class="destacados" ng-controller="MainController">
+      <div class="container">
+
+        <h1>{{ title }}</h1>
+        <h2>{{ promo }}</h2>
+
+      <div ng-repeat="product in products" class="col-md-6"> 
+  <div class="thumbnail"> 
+    <img ng-src="{{product.cover}}"> 
+    <p class="title">{{ product.name | uppercase }}</p> 
+    <p class="price">{{ product.price | currency }}</p> 
+    <p class="date">{{ product.pubdate | date }}</p> 
+    <div class="rating">
+      <p class="likes" ng-click="plusOne($index)">
+        +{{product.likes}}
+      </p>
+      <p class="dislikes" ng-click="minusOne($index)">
+        {{product.dislikes}}
+      </p>
+    </div>
+  </div> 
+</div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <h2>Available for iPhone and Android.</h2>
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/app-store.png" width="120px" />
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/google-play.png" width="110px" />
+      </div>
+    </div>
+
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+  </body>
+</html>
